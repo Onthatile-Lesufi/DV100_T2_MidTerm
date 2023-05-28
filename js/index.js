@@ -5,9 +5,9 @@ register = () => {
     let email = document.getElementById("inputEmail").value;
     let password = document.getElementById("inputPassword").value;
     let phoneNumber = document.getElementById("inputTel").value;
-    let subject = document.getElementById("subjectSelect");
+    let subject = document.getElementById("subjectSelect").value;
 
-    if (subject.tabIndex > 0) {
+    if (subject != "Select A Subject") {
         if (spamCheckbox.checked){
             alert("Welcome "+studentNames+"! Thank you for your interest in "+subject+"! We will contact you via the email provided: "+ email +", or alternatively on the phone number: "+ phoneNumber +".");
             studentArray.push({
@@ -15,7 +15,7 @@ register = () => {
                 studentEmail: email,
                 studentPass: password,
                 studentNumber: phoneNumber,
-                studentSubject: subject.value
+                studentSubject: subject
             })
             console.log(studentArray)
         } else {
